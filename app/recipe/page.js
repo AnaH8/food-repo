@@ -1,7 +1,22 @@
-import React from 'react'
+import RecipeCard from "@/components/RecipeCard";
+import React from "react";
 
-export default function RecipePage() {
+export async function getRecipe() {
+  try {
+    const res = await fetch(
+      "https://www.themealdb.com/api/json/v1/1/random.php")
+    const apiData = await res.json()
+    const recipe = apiData.meals[0]
+    return recipe
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+export default async function RecipePage() {
+  const recipe = await getRecipe()
+  
   return (
-    <div>RecipePage</div>
+    <RecipeCard recipe={recipe}/>
   )
 }
