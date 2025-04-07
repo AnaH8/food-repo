@@ -13,10 +13,21 @@ export async function getRecipe() {
   }
 }
 
+export function handleIngredient(recipe){
+  let ingredients = []
+  for(let j=1;j<=20;j++){
+    if(recipe[`strIngredient`+j]) {
+      ingredients.push((`${recipe[`strMeasure${j}`]} ${recipe[`strIngredient${j}`]}`))
+    }
+  }
+  return ingredients
+}
+
 export default async function RecipePage() {
   const recipe = await getRecipe()
-  
+  const ingredientList = handleIngredient(recipe)
+  //console.log(ingredientList)
   return (
-    <RecipeCard recipe={recipe}/>
+    <RecipeCard recipe={recipe} ingredientList={ingredientList}/>
   )
 }
