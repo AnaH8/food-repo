@@ -12,7 +12,7 @@ export default function RecipeCard(props) {
 
   return (
     <div className='flex flex-col gap-4 recipe-container p-6 md:p-4 md:w-[60%] md:m-auto'>
-      <img className='recipe-image' src={recipe.strMealThumb} alt='food img'/>
+      <img className='z-9 w-[100%] h-[100%] object-cover' src={recipe.strMealThumb} alt='food img'/>
       <h1 className={'text-4xl md:text-6xl font-extrabold ' + playfair.className}>{recipe.strMeal}</h1>
       <div className='text-[#d17a55]'>
         <i className="fa-solid fa-tags pr-2"></i>

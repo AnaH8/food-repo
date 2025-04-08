@@ -22,7 +22,7 @@ export default function Hero() {
 
           <div className='flex items-center'>
             <Link href={'/recipe'}>
-              <button className='border-1 rounded-full duration-200 hover:bg-gray-400 cursor-pointer '>
+              <button className='border-1 rounded-full duration-200 hover:bg-[#d17a55] hover:text-white cursor-pointer '>
                 <p className={'px-4 sm:px-8 whitespace-nowrap py-2 sm:py-3 text-sm sm:text-base md:text-lg ' + playfair.className}>Random recipe 
                 <i className="fa-solid fa-up-right-from-square pl-1 text-xs sm:text-sm"></i>
                 </p>
