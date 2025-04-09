@@ -12,7 +12,7 @@ export default function Hero() {
   return (
     <div className='flex flex-col'>
       <img className='h-[90vh] w-full object-cover object-left' src='bg-img.jpg' alt='bg-img'/>
-      <div className='absolute flex items-center justify-center inset-[0] z-5'>
+      <div className='absolute flex items-center justify-center top-[50%] left-[50%] translate-[-50%] z-5 w-screen'>
         <div className='flex flex-col gap-2 p-2 w-full items-center bg-white opacity-80'>
 
           <div className='flex flex-col items-center'>
