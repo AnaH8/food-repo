@@ -1,41 +1,37 @@
 
+import Card from '@/components/Card'
+import Link from 'next/link'
 import React from 'react'
 
-async function getRecipe(name) {
+async function getRecipes(name) {
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`
-    console.log(url)
+    // console.log(url)
     try {
-      const res = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
-      //const apiData = await res.json()
+      const res = await fetch(url)
       if(!res.ok) {
         throw new Error('something went wrong')
       }
-      return res.json()
-    //   console.log(apiData)
-    //   const recipe = apiData?.meals
-    //   return recipe
+      const apiData = await res.json()
+      const recipes = apiData?.meals
+      return recipes
     } catch (err) {
       console.log(err)
     }
   }
 
-// function handleIngredient(recipe){
-//     let ingredients = []
-//     for(let j=1;j<=20;j++){
-//       if(recipe[`strIngredient`+j]) {
-//         ingredients.push((`${recipe[`strMeasure${j}`]} ${recipe[`strIngredient${j}`]}`))
-//       }
-//     }
-//     return ingredients
-//   }
 export default async function SearchPage({params}) {
     const {name} = await params
-    const recipe = await getRecipe(name)
-    console.log(recipe)
-    // const ingredientList = handleIngredient(recipe)
-  return (
-    // <RecipeCard recipe={recipe} ingredientList={ingredientList}/>
-    <div>you looked for: {name}</div>
-  )
+    const recipes = await getRecipes(name)
+
+    if(recipes){
+      return (
+        <Card recipes={recipes} />
+    )} else{
+    return (
+      <div className='h-screen'>
+        <p>0 recipes found for '{name}'</p>
+        <Link href={'/'}>Go back</Link>
+      </div>
+    )
+  }
 }
