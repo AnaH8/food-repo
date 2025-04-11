@@ -28,8 +28,8 @@ export default async function SearchPage({params}) {
         <Card recipes={recipes} />
     )} else{
     return (
-      <div className='h-screen'>
-        <p>0 recipes found for '{name}'</p>
+      <div className='h-screen text-center'>
+        <p>0 recipes found for &#39;{name}&#39;</p>
         <Link href={'/'}>Go back</Link>
       </div>
     )
