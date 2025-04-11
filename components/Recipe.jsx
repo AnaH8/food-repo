@@ -6,7 +6,7 @@ import { Nunito_Sans } from "next/font/google";
 const playfair = Playfair_Display({subsets: ["latin"], weight: ["400"]});
 const nunito = Nunito_Sans({subsets: ["latin"], weight: ["400"]})
 
-export default function RecipeCard(props) {
+export default function Recipe(props) {
   const {recipe, ingredientList} = props
 
 

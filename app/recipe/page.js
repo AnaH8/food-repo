@@ -1,7 +1,7 @@
-import RecipeCard from "@/components/RecipeCard";
+import Recipe from "@/components/Recipe";
 import React from "react";
 
-export async function getRecipe() {
+async function getRecipe() {
   try {
     const res = await fetch(
       "https://www.themealdb.com/api/json/v1/1/random.php")
@@ -13,7 +13,7 @@ export async function getRecipe() {
   }
 }
 
-export function handleIngredient(recipe){
+function handleIngredient(recipe){
   let ingredients = []
   for(let j=1;j<=20;j++){
     if(recipe[`strIngredient`+j]) {
@@ -28,6 +28,6 @@ export default async function RecipePage() {
   const ingredientList = handleIngredient(recipe)
   //console.log(ingredientList)
   return (
-    <RecipeCard recipe={recipe} ingredientList={ingredientList}/>
+    <Recipe recipe={recipe} ingredientList={ingredientList}/>
   )
 }
