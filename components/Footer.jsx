@@ -12,8 +12,12 @@ export default function Footer() {
 
     <footer className='flex flex-col gap-2 p-4 items-center text-[#5b86ad]'>
       <div className='flex gap-2 text-2xl '>
-        <i className="fa-brands fa-linkedin"></i>
-        <i className="fa-brands fa-github"></i>
+        <Link href={'https://www.linkedin.com/in/anamaria-herbel/'}>
+          <i className="fa-brands fa-linkedin"></i>
+        </Link>
+        <Link href={'https://github.com/AnaH8'}>
+          <i className="fa-brands fa-github"></i>
+        </Link>
       </div>
       <p className={nunito.className}>Copyright © {(new Date().getFullYear())}</p>
     </footer>
