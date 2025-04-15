@@ -1,3 +1,37 @@
+
+# Food Repo 🍝
+
+***Click here for live demo*** -> https://food-repository.netlify.app/
+
+Have you ever found yourself not knowing what to make for dinner? Are you often *hangry* and just decide to order in? Well, you've come to the right place!
+Food Repo lets you find *awesome* recipes which you can use to satisfy your anger, I mean hunger 😁
+
+
+## What is Food Repo
+Food Repo is a tool that makes finding recipes simple and effective. Whether you'd like a random meal when you're not sure what you're in the mood for or you'd like recipe recommendations, this is the place! 
+
+### Highlights
+- choose to get a random meal recipe
+- search for recipes
+- discover good food 
+
+## Built with 
+
+- NextJS
+- TailwindCSS
+- [TheMealDB API](https://www.themealdb.com/api.php)
+
+## How it works
+
+Either click on the Random Recipe button which will get you a random recipe using the API's '/random' endpoint **OR** search meals using the search option, which will give you all the meals that match your search which you can then choose to view in detail
+
+## To be added in the future
+- possibility to sign up/log in and keep a track of your favourite recipes
+- loading pages
+- view categories
+- search filters
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
